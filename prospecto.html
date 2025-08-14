@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+   
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Grupo Vértice-Marco Orellana">
+    <meta name="description" content="Grado Escolar Form">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Registro de Aspirante</title>
+     <link rel="icon" href="img/ISOLOGO.png" type="image/x-icon">
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Gabarito">
+</head>
+
+<style>
+* {
+    margin: 0;
+}
+
+:root {
+  --color1-: #585858cc; /* Menu */
+ --color2-: #90c64a; /* Hover Menu */
+ --color3-: #90c64a; /* Header */
+ --color4-: #585858; /* Title */
+}
+
+body {
+    font-family: Gabarito,Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+header {
+    background-color: var(--color3-);
+    height: 100px;
+    text-align: center;
+    border-bottom: var(--color1-);
+    border-bottom-width: 6px;
+    border-bottom-style: solid;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.26);
+}
+
+.content {
+    padding-inline: 10%;
+}
+
+h1 {
+    color: var(--color3-);
+    font-size: 20px;
+    margin-block: 30px;
+}
+
+h2 {
+    font-size: 16px;
+    text-align: left;
+    padding-left: 2%;
+    font-weight: 500;
+}
+
+.tabla {
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0px 4px 24px rgba(0,0,0,0.08);
+    padding: 40px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px 15px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+input,select {
+    border-radius: 2px;
+    box-sizing: border-box;
+    padding: 9px;
+    font-family: Gabarito,Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: #0e0e0e;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.08);
+    border: none;
+    border-bottom: var(--color3-);
+    border-bottom-width: 6px;
+    border-bottom-style: solid;
+    transition: all 0.3S;
+    width: 100%;
+}
+
+.comentarios {
+    border-radius: 2px;
+    padding: 8px;
+    font-family: Gabarito,Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: #0e0e0e;
+    box-shadow: 0px 0px 10px rgba(32, 32, 32, 0.1);
+    border: none;
+    border-bottom: var(--color3-);
+    border-bottom-width: 6px;
+    border-bottom-style: solid;
+    transition: all 0.3S;
+    width: 95%;
+    height: 150px;
+    resize: none;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+input::placeholder {
+    color: #8a8a8a;
+    opacity: 1;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0px 0px 10px rgba(66, 179, 0, 0.411);
+}
+
+input:hover {
+    outline: none;
+    box-shadow: 0px 0px 10px rgba(66, 179, 0, 0.411);
+}
+
+select:focus {
+    outline: none;
+    box-shadow: 0px 0px 10px rgba(66, 179, 0, 0.411);
+}
+
+select:hover {
+    outline: none;
+    box-shadow: 0px 0px 10px rgba(66, 179, 0, 0.411);
+}
+
+select:required:invalid,
+select:not(:required):not([value]) {
+  color: #8a8a8a;
+}
+
+textarea:focus {
+    outline: none;
+    box-shadow: 0px 0px 10px rgba(66, 179, 0, 0.411);
+}
+
+textarea:hover {
+    outline: none;
+    box-shadow: 0px 0px 10px rgba(66, 179, 0, 0.411);
+}
+
+option[value=""][disabled] {
+  display: none;
+}
+option {
+  color: black;
+}
+
+
+@media (min-width: 600px) {
+  body {
+    font-size: 18px;
+  }
+
+  h1 {
+    font-size: 30px;
+    margin-block: 30px;
+    }
+
+  h2 {
+    font-size: 18px;
+    }
+
+    .tabla{
+            grid-template-columns: 1fr 1fr;
+            gap: 30px 25px;
+    }
+
+    input,select {
+        font-size: 17px;
+    }
+}
+
+@media (min-width: 1024px) {
+    h2 {
+    font-size: 21px;
+    }
+
+  .content {
+    padding-inline: 5%;
+  }
+
+      .tabla{
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+
+}
+
+
+</style>
+
+
+<body>
+
+    <header>
+        <img src="img/universidaddeinnovavionlogo.png" alt="">
+    </header>
+
+    <div class="content">
+
+    <h1>FORMULARIO DE REGISTRO</h1>
+
+    <h2>DATOS DEL ASPIRANTE</h2>
+
+    <div class="tabla">
+
+        <input type="text" placeholder="Primer Apellido" id="primer-apellido" name="primer-apellido" required>
+
+        <input type="text" placeholder="Segundo Apellido" id="segundo-apellido" name="segundo-apellido" required>
+
+        <input type="text" placeholder="Nombre(s)" id="nombre" name="nombre" required>
+
+        <input type="date" placeholder="Fecha Nacimiento" id="fecha-nacimiento" name="fecha-nacimiento" required>
+
+        <select id="sexo" name="sexo" required>
+            <option value="" disabled selected>Sexo</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Femenino">Femenino</option>
+            <option value="Otro">Otro</option>
+        </select>
+
+        <input type="text" placeholder="CURP" id="curp" name="curp">
+
+        <input type="email" placeholder="E-mail" id="email" name="email" required>
+
+        <input type="text" placeholder="Celular" id="celular" name="celular" required>
+
+        <input type="text" placeholder="Nacionalidad" id="nacionalidad" name="nacionalidad">
+
+        <input type="text" placeholder="Estado de Nacimiento" id="estado-nacimiento" name="estado-nacimiento">
+
+        <input type="text" placeholder="Colegio de Procedencia" id="colegio-procedencia" name="colegio-procedencia">
+
+        <input type="text" placeholder="Dirección" id="direccion" name="direccion">
+
+        <input type="text" placeholder="Código Postal" id="codigo-postal" name="codigo-postal">
+
+        <select id="colonia" name="colonia">
+            <option value="" disabled selected>Colonia</option>
+        </select>
+
+        <select id="estado" name="estado">
+            <option value="" disabled selected>Estado</option>
+        </select>
+
+        <select id="ciudad" name="ciudad">
+            <option value="" disabled selected>Ciudad</option>
+        </select>
+
+        <input type="text" placeholder="Municipio" id="municipio" name="municipio">
+
+        <select id="nivel" name="nivel" required>
+            <option value="" disabled selected>Nivel</option>
+        </select>
+
+        <select id="grado" name="ciudad" required>
+            <option value="" disabled selected>Grado</option>
+        </select>
+
+        <select id="diversidad_funcional" name="diversidad_funcional">
+            <option value="" disabled selected>Diversidad Funcional</option>
+            <option value="Autismo">Autismo</option>
+            <option value="Diversidad Funcional del aprendizaje">Diversidad Funcional del aprendizaje</option>
+            <option value="Diversidad Funcional Intelectual">Diversidad Funcional Intelectual</option>
+            <option value="Impedimento Auditivo">Impedimento Auditivo</option>
+
+        </select>
+
+        <input type="text" placeholder="Origen Étnico" id="origen-etnico" name="origen-etnico">
+
+        <select id="medio-contacto" name="medio-contacto">
+            <option value="" disabled selected>¿Cómo nos conociste?</option>
+        </select>
+
+        </div>
+
+        <h2>COMENTARIOS</h2>
+            <textarea class="comentarios" placeholder="Comentarios" id="comentarios" name="comentarios"></textarea>
+    </div>
