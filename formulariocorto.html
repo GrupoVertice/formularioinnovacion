@@ -26,7 +26,6 @@
 body {
     font-family: Gabarito,Arial, Helvetica, sans-serif;
     text-align: center;
-    padding-bottom: 40px;
 }
 
 header {
@@ -46,17 +45,16 @@ header {
 h1 {
     color: var(--color3-);
     font-size: 20px;
-    margin-block: 30px;
+    margin-block: 20px;
 }
 
 h2 {
     font-size: 16px;
-    text-align: left;
     padding-left: 2%;
     font-weight: 500;
 }
 
-.tabla {
+.tablac {
     border-radius: 5px;
     background-color: white;
     box-shadow: 0px 4px 24px rgba(0,0,0,0.08);
@@ -66,6 +64,8 @@ h2 {
     gap: 30px 15px;
     margin-top: 10px;
     margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 input,select {
@@ -83,25 +83,6 @@ input,select {
     border-bottom-style: solid;
     transition: all 0.3S;
     width: 100%;
-}
-
-.comentarios {
-    border-radius: 2px;
-    padding: 8px;
-    font-family: Gabarito,Arial, Helvetica, sans-serif;
-    font-size: 15px;
-    color: #0e0e0e;
-    box-shadow: 0px 0px 10px rgba(32, 32, 32, 0.1);
-    border: none;
-    border-bottom: var(--color3-);
-    border-bottom-width: 6px;
-    border-bottom-style: solid;
-    transition: all 0.3S;
-    width: 95%;
-    height: 150px;
-    resize: none;
-    margin-top: 10px;
-    margin-bottom: 30px;
 }
 
 input::placeholder {
@@ -185,6 +166,7 @@ button {
     box-shadow: 0px 0px 10px var(--color3-);
 }
 
+
 @media (min-width: 600px) {
   body {
     font-size: 18px;
@@ -192,21 +174,27 @@ button {
 
   h1 {
     font-size: 30px;
-    margin-block: 30px;
     }
 
   h2 {
     font-size: 18px;
     }
 
-    .tabla{
-        grid-template-columns: 1fr 1fr;
-        gap: 30px 25px;
-        padding: 40px;
-    }
-
     input,select {
         font-size: 17px;
+    }
+
+          .tablac{
+            max-width: 600px;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas: 
+            "nombre nombre"
+            ". ."
+            ". ."
+            ;
+    }
+    .nombre {
+        grid-area: nombre;
     }
 }
 
@@ -219,11 +207,8 @@ button {
     padding-inline: 5%;
   }
 
-      .tabla{
-            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    }
-
 }
+
 
 </style>
 
@@ -240,52 +225,20 @@ button {
 
     <h2>DATOS DEL ASPIRANTE</h2>
 
-    <div class="tabla">
-
-        <input type="text" placeholder="Primer Apellido" id="primer-apellido" name="primer-apellido" required>
-
-        <input type="text" placeholder="Segundo Apellido" id="segundo-apellido" name="segundo-apellido" required>
-
-        <input type="text" placeholder="Nombre(s)" id="nombre" name="nombre" required>
+    <div class="tablac">
+        <div class="nombre">
+        <input type="text" placeholder="Nombre Completo" id="nombre" name="nombre" required>
+        </div>
 
         <input type="date" placeholder="Fecha Nacimiento" id="fecha-nacimiento" name="fecha-nacimiento" required>
 
-        <select id="sexo" name="sexo" required>
-            <option value="" disabled selected>Sexo</option>
-            <option value="Masculino">Masculino</option>
-            <option value="Femenino">Femenino</option>
-            <option value="Otro">Otro</option>
+        <select id="medio-contacto" name="medio-contacto">
+            <option value="" disabled selected>¿Cómo nos conociste?</option>
         </select>
-
-        <input type="text" placeholder="CURP" id="curp" name="curp">
 
         <input type="email" placeholder="E-mail" id="email" name="email" required>
 
         <input type="text" placeholder="Celular" id="celular" name="celular" required>
-
-        <input type="text" placeholder="Nacionalidad" id="nacionalidad" name="nacionalidad">
-
-        <input type="text" placeholder="Estado de Nacimiento" id="estado-nacimiento" name="estado-nacimiento">
-
-        <input type="text" placeholder="Colegio de Procedencia" id="colegio-procedencia" name="colegio-procedencia">
-
-        <input type="text" placeholder="Dirección" id="direccion" name="direccion">
-
-        <input type="text" placeholder="Código Postal" id="codigo-postal" name="codigo-postal">
-
-        <select id="colonia" name="colonia">
-            <option value="" disabled selected>Colonia</option>
-        </select>
-
-        <select id="estado" name="estado">
-            <option value="" disabled selected>Estado</option>
-        </select>
-
-        <select id="ciudad" name="ciudad">
-            <option value="" disabled selected>Ciudad</option>
-        </select>
-
-        <input type="text" placeholder="Municipio" id="municipio" name="municipio">
 
         <select id="nivel" name="nivel" required>
             <option value="" disabled selected>Nivel</option>
@@ -295,25 +248,7 @@ button {
             <option value="" disabled selected>Grado</option>
         </select>
 
-        <select id="diversidad_funcional" name="diversidad_funcional">
-            <option value="" disabled selected>Diversidad Funcional</option>
-            <option value="Autismo">Autismo</option>
-            <option value="Diversidad Funcional del aprendizaje">Diversidad Funcional del aprendizaje</option>
-            <option value="Diversidad Funcional Intelectual">Diversidad Funcional Intelectual</option>
-            <option value="Impedimento Auditivo">Impedimento Auditivo</option>
-
-        </select>
-
-        <input type="text" placeholder="Origen Étnico" id="origen-etnico" name="origen-etnico">
-
-        <select id="medio-contacto" name="medio-contacto">
-            <option value="" disabled selected>¿Cómo nos conociste?</option>
-        </select>
-
         </div>
-
-        <h2>COMENTARIOS</h2>
-            <textarea class="comentarios" placeholder="Comentarios" id="comentarios" name="comentarios"></textarea>
 
         <a href="https://www.gradoescolar.com/aviso-de-privacidad/">Nuestro Aviso de Privacidad</a>
 
