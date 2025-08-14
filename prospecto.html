@@ -59,7 +59,7 @@ h2 {
     border-radius: 5px;
     background-color: white;
     box-shadow: 0px 4px 24px rgba(0,0,0,0.08);
-    padding: 40px;
+    padding: 20px;
     display: grid;
     grid-template-columns: 1fr;
     gap: 30px 15px;
@@ -150,6 +150,20 @@ option {
   color: black;
 }
 
+a {
+    color: var(--color3-);
+    text-decoration: none;
+    font-size: 18px;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.aviso {
+    margin-block: 20px;
+    display: grid;
+    grid-template-columns: 20px 1fr;
+}
+
 
 @media (min-width: 600px) {
   body {
@@ -166,8 +180,9 @@ option {
     }
 
     .tabla{
-            grid-template-columns: 1fr 1fr;
-            gap: 30px 25px;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px 25px;
+        padding: 40px;
     }
 
     input,select {
@@ -280,4 +295,11 @@ option {
 
         <h2>COMENTARIOS</h2>
             <textarea class="comentarios" placeholder="Comentarios" id="comentarios" name="comentarios"></textarea>
+
+        <a href="https://www.gradoescolar.com/aviso-de-privacidad/">Nuestro Aviso de Privacidad</a>
+
+        <div class="aviso">
+        <input type="checkbox" id="terminos" name="terminos" required>
+        <label for="terminos">He leído y acepto los términos y condiciones</label>
+        </div>
     </div>
